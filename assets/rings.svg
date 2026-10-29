@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="20 22 680 440" role="img" aria-label="Two linked rings">
+  <defs>
+    <radialGradient id="blueTube" cx="240" cy="240" r="210" gradientUnits="userSpaceOnUse">
+      <stop offset="0.59" stop-color="#1f4b8c"/>
+      <stop offset="0.72" stop-color="#4f8ad6"/>
+      <stop offset="0.86" stop-color="#3a72bf"/>
+      <stop offset="1" stop-color="#1c427d"/>
+    </radialGradient>
+    <linearGradient id="redTop" x1="0" y1="145" x2="0" y2="355" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#d9644a"/>
+      <stop offset="0.55" stop-color="#bf4a33"/>
+      <stop offset="1" stop-color="#9a3322"/>
+    </linearGradient>
+    <clipPath id="above"><rect x="0" y="0" width="720" height="252"/></clipPath>
+    <clipPath id="below"><rect x="0" y="248" width="720" height="232"/></clipPath>
+    <clipPath id="redArea">
+      <path clip-rule="evenodd" d="M255 250a215 105 0 1 0 430 0a215 105 0 1 0-430 0Z M345 240a120 26 0 1 0 240 0a120 26 0 1 0-240 0Z"/>
+    </clipPath>
+    <g id="red">
+      <!-- side wall -->
+      <path fill="#7a2617" fill-rule="evenodd" d="M255 264a215 105 0 1 0 430 0a215 105 0 1 0-430 0Z M345 240a120 26 0 1 0 240 0a120 26 0 1 0-240 0Z"/>
+      <!-- top surface -->
+      <path fill="url(#redTop)" fill-rule="evenodd" stroke="#2a0d07" stroke-width="2" d="M255 250a215 105 0 1 0 430 0a215 105 0 1 0-430 0Z M345 240a120 26 0 1 0 240 0a120 26 0 1 0-240 0Z"/>
+    </g>
+  </defs>
+
+  <!-- red ring, far half -->
+  <g clip-path="url(#above)">
+    <use href="#red"/>
+    <!-- inner wall seen through the hole -->
+    <path fill="#8c2d1c" d="M345 240a120 26 0 0 1 240 0a120 14 0 0 0-240 0Z"/>
+  </g>
+
+  <!-- blue ring -->
+  <g>
+    <path fill="url(#blueTube)" fill-rule="evenodd" stroke="#0b1a33" stroke-width="2" d="M30 240a210 210 0 1 0 420 0a210 210 0 1 0-420 0Z M115 240a125 125 0 1 0 250 0a125 125 0 1 0-250 0Z"/>
+    <g fill="none" stroke="#0b1a33" stroke-opacity="0.35" stroke-width="1.2">
+      <circle cx="240" cy="240" r="138"/>
+      <circle cx="240" cy="240" r="152"/>
+      <circle cx="240" cy="240" r="186"/>
+      <circle cx="240" cy="240" r="199"/>
+    </g>
+  </g>
+
+  <!-- red ring, near half -->
+  <g clip-path="url(#below)">
+    <use href="#red"/>
+  </g>
+
+  <!-- hidden edges of the blue ring behind the red one -->
+  <g clip-path="url(#below)">
+    <g clip-path="url(#redArea)" fill="none" stroke="#2a0d07" stroke-width="2" stroke-dasharray="7 6">
+      <circle cx="240" cy="240" r="210"/>
+      <circle cx="240" cy="240" r="125"/>
+    </g>
+  </g>
+</svg>
